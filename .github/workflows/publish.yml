@@ -18,11 +18,11 @@ jobs:
       id: download-artifact
       uses: dawidd6/action-download-artifact@v2
       with:
-        github_token: ${{secrets.MORTBOPET_GITHUB_IO_READ_TOKEN}}
+        github_token: ${{secrets.GH_TOKEN}}
         workflow: wasm-release.yml
         branch: master
         name: Release_wasm
-        repo: mortbopet/Ripes
+        repo: margheritarufi/Ripes
 
     - name: Commit and push if changed
       run: |
@@ -40,4 +40,4 @@ jobs:
           echo "No changes to wasm release"
         fi
       env:
-        GITHUB_TOKEN: ${{ secrets.MORTBOPET_GITHUB_IO_WRITE_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
